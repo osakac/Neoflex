@@ -1,0 +1,31 @@
+.header {
+  padding: 15px 0;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  button,
+  a {
+    display: flex;
+  }
+
+  svg {
+    transition: all 0.3s ease;
+  }
+
+  button:hover svg {
+    transform: scale(1.3);
+  }
+}
