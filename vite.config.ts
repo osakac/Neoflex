@@ -8,6 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": "/src",
+      "@variables": "/src/assets/styles/variables.scss",
     },
   },
 })
