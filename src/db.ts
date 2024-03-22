@@ -43,5 +43,27 @@ export default {
       rating: 4.5,
     },
   ],
-  "Беспроводные наушники": [],
+  "Беспроводные наушники": [
+    {
+      id: 7,
+      name: "Apple AirPods",
+      image: "/Apple-AirPods.jpg",
+      price: 9_527,
+      rating: 4.7,
+    },
+    {
+      id: 8,
+      name: "GERLAX GH-04",
+      image: "/GERLAX-GH-04.jpg",
+      price: 6_527,
+      rating: 4.7,
+    },
+    {
+      id: 9,
+      name: "BOROFONE BO4",
+      image: "/BOROFONE-BO4.jpg",
+      price: 7_527,
+      rating: 4.7,
+    },
+  ],
 }
