@@ -74,4 +74,20 @@
   a {
     display: flex;
   }
+
+  svg path {
+    transition: all 0.3s ease;
+  }
+}
+
+.socialVk:hover path {
+  fill: #5181b8;
+}
+
+.socialTelegram:hover path {
+  fill: #28a9e8;
+}
+
+.socialWhatsapp:hover path {
+  fill: #14fe3b;
 }

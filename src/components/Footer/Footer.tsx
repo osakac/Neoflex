@@ -46,18 +46,18 @@ const Footer = () => {
       </ul>
 
       <ul className={`${cl.socials} list-reset`}>
-        <li>
-          <Link to={"/"}>
+        <li className={cl.socialVk}>
+          <Link to={"https://vk.com/osakac"} target="_blank">
             <VkIcon />
           </Link>
         </li>
-        <li>
+        <li className={cl.socialTelegram}>
           <Link to={"/"}>
             <TelegramIcon />
           </Link>
         </li>
-        <li>
-          <Link to={"/"}>
+        <li className={cl.socialWhatsapp}>
+          <Link to="tel:+7 (999) 999-99-99">
             <WhatsappIcon />
           </Link>
         </li>
