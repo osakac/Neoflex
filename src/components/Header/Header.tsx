@@ -2,13 +2,17 @@
 
 import CartIcon from "@/assets/svg/cart.svg?react"
 import HeartIcon from "@/assets/svg/heart.svg?react"
-import { RootState } from "@/store"
-import { useSelector } from "react-redux"
+import { CartContext } from "@/context/cartContext"
+import { useContext, useMemo } from "react"
 import { Link } from "react-router-dom"
 import cl from "./Header.module.scss"
 
-export const Header = () => {
-  const cartCount = useSelector((state: RootState) => state.cart.cart).length
+const Header = () => {
+  const { cart } = useContext(CartContext)
+
+  const cartCount = useMemo(() => {
+    return cart.length
+  }, [cart])
 
   return (
     <header className={cl.header}>
@@ -29,3 +33,5 @@ export const Header = () => {
     </header>
   )
 }
+
+export default Header

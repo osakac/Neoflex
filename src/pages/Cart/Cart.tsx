@@ -1,13 +1,13 @@
 import CartList from "@/components/Cart/CartList/CartList"
 import MakingOrder from "@/components/Cart/MakingOrder/MakingOrder"
-import { RootState } from "@/store"
-import { useMemo } from "react"
-import { useSelector } from "react-redux"
+import { CartContext } from "@/context/cartContext"
+import { useContext, useMemo } from "react"
 import { Link } from "react-router-dom"
 import cl from "./Cart.module.scss"
 
 const Cart = () => {
-  const cart = useSelector((state: RootState) => state.cart.cart)
+  const { cart } = useContext(CartContext)
+
   const cartPrice = useMemo(() => {
     return cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
   }, [cart])
