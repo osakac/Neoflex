@@ -1,0 +1,88 @@
+@import "@variables";
+
+.item {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 18px;
+  background: #fff;
+  border-radius: 30px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 17px;
+
+  button {
+    display: flex;
+    align-self: flex-start;
+    border-radius: 50%;
+    padding: 5px;
+
+    &:hover {
+      background: #df6464;
+
+      .deleteIcon path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.imageTitle {
+  display: flex;
+  align-items: center;
+
+  img {
+    max-width: 150px;
+    max-height: 140px;
+    margin-right: 23px;
+  }
+}
+
+.titlePrice {
+  h3 {
+    margin: 0;
+    margin-bottom: 12px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #aaa;
+  }
+}
+
+.countPrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 30px;
+    background: $yellow;
+    border-radius: 50%;
+  }
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 600;
+}
