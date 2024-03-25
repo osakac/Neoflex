@@ -1,5 +1,5 @@
 import CartItem from "@/components/Cart/CartItem/CartItem"
-import { CartItem as CartItemType } from "@/store/cart/types"
+import { CartItem as CartItemType } from "@/types/cartItem"
 import cl from "./CartList.module.scss"
 
 interface Props {

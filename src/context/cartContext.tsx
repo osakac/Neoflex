@@ -1,4 +1,4 @@
-import { CartItem } from "@/store/cart/types"
+import { CartItem } from "@/types/cartItem"
 import { Product } from "@/types/product"
 import { ReactNode, createContext, useState } from "react"
 
