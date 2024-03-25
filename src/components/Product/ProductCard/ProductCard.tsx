@@ -1,6 +1,8 @@
 import StarIcon from "@/assets/svg/star.svg?react"
+import { addToCart } from "@/store/cart/cartSlice"
 import { Product } from "@/types/product"
 import { priceFormatter } from "@/utils/priceFormatter"
+import { useDispatch } from "react-redux"
 import cl from "./ProductCard.module.scss"
 
 interface Props {
@@ -8,6 +10,10 @@ interface Props {
 }
 
 const ProductCard = ({ product }: Props) => {
+  const dispatch = useDispatch()
+
+  const onAdd = () => dispatch(addToCart(product))
+
   return (
     <li className={cl.card}>
       <img src={product.image} alt={product.name} />
@@ -22,7 +28,7 @@ const ProductCard = ({ product }: Props) => {
           <StarIcon />
           <span>{product.rating}</span>
         </div>
-        <button>Купить</button>
+        <button onClick={onAdd}>Купить</button>
       </div>
     </li>
   )
