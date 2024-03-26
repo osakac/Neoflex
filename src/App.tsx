@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react"
 import { Route, Routes } from "react-router-dom"
+import Loader from "./components/Loader/Loader"
 import { MainLayout } from "./layouts/MainLayout"
 
 const Home = lazy(() => import("./pages/Home/Home"))
@@ -12,7 +13,7 @@ function App() {
         <Route
           index
           element={
-            <Suspense fallback={null}>
+            <Suspense fallback={<Loader />}>
               <Home />
             </Suspense>
           }
@@ -20,7 +21,7 @@ function App() {
         <Route
           path="/cart"
           element={
-            <Suspense fallback={null}>
+            <Suspense fallback={<Loader />}>
               <Cart />
             </Suspense>
           }
