@@ -35,3 +35,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 839px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}

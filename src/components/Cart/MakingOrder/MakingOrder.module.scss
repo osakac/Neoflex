@@ -35,3 +35,15 @@
     text-transform: uppercase;
   }
 }
+
+@media (max-width: 839px) {
+  .wrapper {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 559px) {
+  .wrapper {
+    width: 100%;
+  }
+}
