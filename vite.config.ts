@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       "@": "/src",
       "@variables": "/src/assets/styles/variables.scss",
+      "@mixins": "/src/assets/styles/mixins.scss",
     },
   },
 })
