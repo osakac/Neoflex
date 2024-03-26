@@ -1,6 +1,5 @@
 import DeleteIcon from "@/assets/svg/deleting.svg?react"
-import MinusIcon from "@/assets/svg/minus.svg?react"
-import PlusIcon from "@/assets/svg/plus.svg?react"
+import ProductQuantity from "@/components/Product/ProductQuantity/ProductQuantity"
 import { CartContext } from "@/context/cartContext"
 import { CartItem as CartItemType } from "@/types/cartItem"
 import { priceFormatter } from "@/utils/priceFormatter"
@@ -12,7 +11,7 @@ interface Props {
 }
 
 const CartItem = ({ product }: Props) => {
-  const { remove, updateQuantity } = useContext(CartContext)
+  const { remove } = useContext(CartContext)
 
   const price = useMemo(() => {
     return product.price * product.quantity
@@ -36,21 +35,7 @@ const CartItem = ({ product }: Props) => {
       </div>
 
       <div className={cl.countPrice}>
-        <div className={cl.count}>
-          <button
-            onClick={() => updateQuantity(product.id, product.quantity - 1)}
-            className={cl.minus}
-          >
-            <MinusIcon />
-          </button>
-          <span>{product.quantity}</span>
-          <button
-            onClick={() => updateQuantity(product.id, product.quantity + 1)}
-            className={cl.plus}
-          >
-            <PlusIcon />
-          </button>
-        </div>
+        <ProductQuantity id={product.id} quantity={product.quantity} />
 
         <span className={cl.price}>{priceFormatter(price)}</span>
       </div>
