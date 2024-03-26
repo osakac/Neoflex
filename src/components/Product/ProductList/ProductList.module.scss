@@ -17,3 +17,15 @@
   flex-wrap: wrap;
   gap: 30px;
 }
+
+@media (max-width: 1119px) {
+  .list {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 839px) {
+  .title {
+    text-align: center;
+  }
+}

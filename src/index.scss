@@ -24,3 +24,9 @@ body {
   flex-grow: 1;
   margin-bottom: 30px;
 }
+
+@media (max-width: 1119px) {
+  .content {
+    max-width: 900px;
+  }
+}

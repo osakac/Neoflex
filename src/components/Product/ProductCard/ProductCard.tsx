@@ -14,7 +14,9 @@ const ProductCard = ({ product }: Props) => {
 
   return (
     <li className={cl.card}>
-      <img src={product.image} alt={product.name} />
+      <div className={cl.imageWrapper}>
+        <img src={product.image} alt={product.name} />
+      </div>
 
       <div className={cl.titlePriceBlock}>
         <h3>{product.name}</h3>

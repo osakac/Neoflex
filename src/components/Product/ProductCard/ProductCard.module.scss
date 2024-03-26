@@ -11,11 +11,14 @@
   border-radius: 30px;
 
   img {
-    margin: 0 auto;
-    margin-bottom: 30px;
     height: 100%;
-    max-height: 238px;
   }
+}
+
+.imageWrapper {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  max-height: 238px;
 }
 
 .titlePriceBlock {
@@ -62,5 +65,26 @@
   span {
     margin-top: 3px;
     color: $grey;
+  }
+}
+
+@media (max-width: 1139px) {
+  .card {
+    width: 250px;
+  }
+}
+
+@media (max-width: 559px) {
+  .card {
+    max-width: 200px;
+    font-size: 15px;
+  }
+
+  .imageWrapper {
+    max-width: 170px;
+  }
+
+  .titlePriceBlock h3 {
+    font-size: 15px;
   }
 }

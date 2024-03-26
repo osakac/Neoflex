@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className={cl.footer}>
       <h2>QPICK</h2>
 
-      <ul className={`${cl.options} list-reset`}>
+      <ul className={cl.options}>
         <li>
           <Link to={"/"}>Избранное</Link>
         </li>
