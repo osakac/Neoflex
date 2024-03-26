@@ -18,17 +18,19 @@ const ProductCard = ({ product }: Props) => {
         <img src={product.image} alt={product.name} />
       </div>
 
-      <div className={cl.titlePriceBlock}>
-        <h3>{product.name}</h3>
-        <span>{priceFormatter(product.price)}</span>
-      </div>
-
-      <div className={cl.ratingBuyBlock}>
-        <div className={cl.rating}>
-          <StarIcon />
-          <span>{product.rating}</span>
+      <div>
+        <div className={cl.titlePriceBlock}>
+          <h3>{product.name}</h3>
+          <span>{priceFormatter(product.price)}</span>
         </div>
-        <button onClick={() => add(product)}>Купить</button>
+
+        <div className={cl.ratingBuyBlock}>
+          <div className={cl.rating}>
+            <StarIcon />
+            <span>{product.rating}</span>
+          </div>
+          <button onClick={() => add(product)}>Купить</button>
+        </div>
       </div>
     </li>
   )
