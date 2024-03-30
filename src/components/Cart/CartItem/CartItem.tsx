@@ -1,17 +1,18 @@
 import DeleteIcon from "@/assets/svg/deleting.svg?react"
 import ProductQuantity from "@/components/Product/ProductQuantity/ProductQuantity"
-import { CartContext } from "@/context/cartContext"
 import { CartItem as CartItemType } from "@/types/cartItem"
 import { priceFormatter } from "@/utils/priceFormatter"
-import { useContext, useMemo } from "react"
+import { useMemo } from "react"
 import cl from "./CartItem.module.scss"
+import { useDispatch } from "react-redux"
+import { remove } from "@/redux/cartSlice/cartSlice"
 
 interface Props {
   product: CartItemType
 }
 
 const CartItem = ({ product }: Props) => {
-  const { remove } = useContext(CartContext)
+  const dispatch = useDispatch()
 
   const price = useMemo(() => {
     return product.price * product.quantity
@@ -21,7 +22,10 @@ const CartItem = ({ product }: Props) => {
     <li className={cl.item}>
       <div className={cl.info}>
         <div className={cl.imageTitle}>
-          <img src={product.image} alt={product.name} />
+          <img
+            src={product.image}
+            alt={product.name}
+          />
 
           <div className={cl.titlePrice}>
             <h3>{product.name}</h3>
@@ -29,13 +33,16 @@ const CartItem = ({ product }: Props) => {
           </div>
         </div>
 
-        <button onClick={() => remove(product.id)}>
+        <button onClick={() => dispatch(remove(product.id))}>
           <DeleteIcon className={cl.deleteIcon} />
         </button>
       </div>
 
       <div className={cl.countPrice}>
-        <ProductQuantity id={product.id} quantity={product.quantity} />
+        <ProductQuantity
+          id={product.id}
+          quantity={product.quantity}
+        />
 
         <span className={cl.price}>{priceFormatter(price)}</span>
       </div>
