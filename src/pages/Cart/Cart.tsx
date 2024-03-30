@@ -1,12 +1,13 @@
 import CartList from "@/components/Cart/CartList/CartList"
 import MakingOrder from "@/components/Cart/MakingOrder/MakingOrder"
-import { CartContext } from "@/context/cartContext"
-import { useContext, useMemo } from "react"
+import { useMemo } from "react"
 import { Link } from "react-router-dom"
 import cl from "./Cart.module.scss"
+import { useSelector } from "react-redux"
+import { RootState } from "@/redux"
 
 const Cart = () => {
-  const { cart } = useContext(CartContext)
+  const cart = useSelector((state: RootState) => state.cart.cart)
 
   const cartPrice = useMemo(() => {
     return cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
@@ -16,7 +17,10 @@ const Cart = () => {
     return (
       <>
         <h2 className={cl.emptyTitle}>Корзина пуста</h2>
-        <Link to={"/"} className={cl.emptyBtn}>
+        <Link
+          to={"/"}
+          className={cl.emptyBtn}
+        >
           Перейти в каталог
         </Link>
       </>
