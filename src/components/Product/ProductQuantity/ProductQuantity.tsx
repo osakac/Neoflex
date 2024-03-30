@@ -1,8 +1,8 @@
 import MinusIcon from "@/assets/svg/minus.svg?react"
 import PlusIcon from "@/assets/svg/plus.svg?react"
-import { CartContext } from "@/context/cartContext"
-import { useContext } from "react"
 import cl from "./ProductQuantity.module.scss"
+import { useDispatch } from "react-redux"
+import { updateQuantity } from "@/redux/cartSlice/cartSlice"
 
 interface Props {
   id: number
@@ -10,19 +10,19 @@ interface Props {
 }
 
 const ProductQuantity = ({ id, quantity }: Props) => {
-  const { updateQuantity } = useContext(CartContext)
+  const dispatch = useDispatch()
 
   return (
     <div className={cl.count}>
       <button
-        onClick={() => updateQuantity(id, quantity - 1)}
+        onClick={() => dispatch(updateQuantity({ id, quantity: quantity - 1 }))}
         className={cl.minus}
       >
         <MinusIcon />
       </button>
       <span>{quantity}</span>
       <button
-        onClick={() => updateQuantity(id, quantity + 1)}
+        onClick={() => dispatch(updateQuantity({ id, quantity: quantity + 1 }))}
         className={cl.plus}
       >
         <PlusIcon />
