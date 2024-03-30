@@ -1,21 +1,24 @@
 import StarIcon from "@/assets/svg/star.svg?react"
-import { CartContext } from "@/context/cartContext"
 import { Product } from "@/types/product"
 import { priceFormatter } from "@/utils/priceFormatter"
-import { useContext } from "react"
 import cl from "./ProductCard.module.scss"
+import { useDispatch } from "react-redux"
+import { add } from "@/redux/cartSlice/cartSlice"
 
 interface Props {
   product: Product
 }
 
 const ProductCard = ({ product }: Props) => {
-  const { add } = useContext(CartContext)
+  const dispatch = useDispatch()
 
   return (
     <li className={cl.card}>
       <div className={cl.imageWrapper}>
-        <img src={product.image} alt={product.name} />
+        <img
+          src={product.image}
+          alt={product.name}
+        />
       </div>
 
       <div>
@@ -29,7 +32,7 @@ const ProductCard = ({ product }: Props) => {
             <StarIcon />
             <span>{product.rating}</span>
           </div>
-          <button onClick={() => add(product)}>Купить</button>
+          <button onClick={() => dispatch(add(product))}>Купить</button>
         </div>
       </div>
     </li>
