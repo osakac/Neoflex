@@ -1,3 +1,8 @@
-## Ветка master - использует React Context
+### Для запуска приложения нужно:
 
-## Ветка redux - использует Redux
+- npm i
+- npm run dev
+
+### Ветка master - использует React Context
+
+### Ветка redux - использует Redux
